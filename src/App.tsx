@@ -1,7 +1,7 @@
 import { Dispatch, SetStateAction, useState } from "react";
 import { createContext } from "react";
-import IndexPage from "./pages/index";
 import { Task } from "./models/Task";
+import useRouteElements from "./useRouteElements";
 
 const defaultContextValue = {
   taskList:
@@ -18,10 +18,11 @@ export const AppContext = createContext<{
 
 function App() {
   const [context, setContext] = useState(defaultContextValue);
+  const routeElements = useRouteElements();
 
   return (
     <AppContext.Provider value={{ context, setContext }}>
-      <IndexPage />
+      {routeElements}
     </AppContext.Provider>
   );
 }

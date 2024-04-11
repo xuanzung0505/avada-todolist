@@ -7,7 +7,7 @@ export interface TaskInterface {
 }
 
 export class Task {
-  id?: string;
+  id: string;
   title: string;
   completed: boolean;
 
